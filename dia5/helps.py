@@ -1,5 +1,5 @@
-def get_input(input):    
-    with open(input,"r") as file:
+def get_input(entrada):    
+    with open(entrada,"r") as file:
         linhas = file.readlines() # le todas as linhas e armazena em um vetor
     limpa =[]
     for linha in linhas:
