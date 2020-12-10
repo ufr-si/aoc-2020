@@ -2,8 +2,6 @@ import helps as h # importa e chama de h
 linhas = h.get_input("input.txt")
 
 
-
-
 # assentos_ocupados = []
 mapa_assentos = []
 for i in range(0,128):
@@ -36,7 +34,6 @@ for linha in linhas:
     fim = 7 
     tamanho = 8
     
-    
     for a in assento:
         if(a == "R"):
             inicio = inicio + (tamanho/2)
@@ -47,8 +44,6 @@ for linha in linhas:
     n_assento = int(fim)
 
     mapa_assentos[n_fileira][n_assento] = 1
-
-
 
 for i in range(0,128):
     print("i:",i)
@@ -64,7 +59,6 @@ for i in range(0,128):
             res = i*8+j
             print("resultado: ",res)
             exit()
-    
     
         # Every seat also has a unique seat ID:
         # multiply the row by 8,
