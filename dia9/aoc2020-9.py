@@ -40,11 +40,10 @@ def soma(j,i,num):
     # a partir de 0, multiplica 2 números seguintes
     res = 0
     lista = []
-    for k in range(i,len(li)):
-        # só posso somar se i+j  <len(li)
-        for n in range (k,i+j):
-            res = res + li[n]
-            lista.append(li[n])
+    for k in range(i,len(li)): 
+        #a partir de 0, tenta multiplicar os x seguintes
+        # multiplica os x números seguintes
+
         if res == num:
             return lista
     return []
@@ -52,15 +51,28 @@ def soma(j,i,num):
 def part2(n):
         #procurar pos números que somados juntos dão esse valor
         i = 0
+        # a partir do começo i =0
         atual = li[0]
+        # isso é pra ver se eu cheguei no numero pq aí é impossível chegar
         while(atual != n and i<len(li)):
-            #multiplica x números a partir de i 
-            for j in range(2,len(li)):
-                res = soma(j,i,n) # retorna a lista se encontrou os valores contíguos que somados dão o num
-                if res != []:
-                    print("lista",res)
-                    res = min(res)+max(res)
-                    return res
+            
+            #  j de 2 até (len(li) -i)
+            # soma de 2 em 2, 3 em 3 até por exemplo 
+
+            for m in range(2,len(li)-2):
+                # multiplica de m em m (2 em 2, 3 em 3...)
+                k = 0+m
+                while (k<=len(li)):
+                    vet = li[k-m:k]
+                    if (sum(vet)== n):
+                        print("achou")
+                        res = min(vet)+max(vet)
+                        print(vet)
+                        print("part 2 ",res)
+                        exit()
+                    k = k+1
+
+            
             i = i+1
             atual = li[i]
 print("part 2: ",part2(res))
